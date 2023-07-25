@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import { Task } from './Component/Task/Task';
+import { Function } from './Component/Javascriptfunction/Function';
 import { Button } from './Component/Button/Button';
 import MyButton from './Component/Mybutton/MyButton';
 import { MyHeader } from './Component/MyHeader';
@@ -9,6 +11,7 @@ import { ListRendering } from './Component/rendering/ListRendering';
  function NewButton(){
   return(
     <div>
+
     <h1>Hii,Welcome to React</h1>
     <button>I am a button </button>
     </div>
@@ -52,7 +55,8 @@ export default function App() {
   }
   return (
     <>
-   
+    <Task/>
+   <Function/>
     <Button name="vaishnavi"/>
     <img className="Avtar" src={logo} alt={'Photo of ' + user.name} />
     <NewButton/>
