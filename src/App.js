@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import './App.css';
+//import { TaskThree } from './Component/Task/Task3';
+//import { TaskTwo } from './Component/Task2/TaskTwo';
 import { Task } from './Component/Task/Task';
-import { Function } from './Component/Javascriptfunction/Function';
-import { Button } from './Component/Button/Button';
-import MyButton from './Component/Mybutton/MyButton';
-import { MyHeader } from './Component/MyHeader';
-import logo from './reactlogo.jpg'
-import { ListRendering } from './Component/rendering/ListRendering';
+//import { Function } from './Component/Javascriptfunction/Function';
+//import { Button } from './Component/Button/Button';
+//import MyButton from './Component/Mybutton/MyButton';
+//import { MyHeader } from './Component/MyHeader';
+//import logo from './reactlogo.jpg'
+//import { ListRendering } from './Component/rendering/ListRendering';
 //let isLoggedIn = false;
  function NewButton(){
   return(
@@ -53,8 +55,16 @@ export default function App() {
 
     buttonText1 = "Login"
   }
+  
   return (
-    <>
+    <div>
+
+    <Task/>
+    <h1>email={'vaishnavi@gmail.com'}</h1>
+    </div>
+    /*<>
+  
+  <TaskTwo/>
     <Task/>
    <Function/>
     <Button name="vaishnavi"/>
@@ -68,8 +78,9 @@ export default function App() {
       <MyButton buttonText2={buttonText1} toggleButton={toggleButton} />
       <ListRendering/>
       
-    </>
+    </>*/
   );
 }
+
 
 
