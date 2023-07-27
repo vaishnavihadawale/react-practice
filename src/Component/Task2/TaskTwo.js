@@ -1,3 +1,4 @@
+import './StyleToTaskTwo.css'
 export const TaskTwo = () => {
     const student = [
         { Id: 101, class: 'SYMSC', sname: 'tyu', Department: 'compuer science', math: 56, science: 77, history: 89, marathi: 95, english: 70, geography: 89 },
@@ -43,7 +44,6 @@ export const TaskTwo = () => {
                             <td>{p.sname}</td>
                             <td>{p.Department}</td>
                             <td>{p.math}</td>
-                            <td>{p.science}</td>
                             <td>{p.science}</td>
                             <td>{p.history}</td>
                             <td>{p.marathi}</td>
