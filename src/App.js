@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import { Home } from './Component/Task4/Home';
+
+ import {DisplayOne} from './Component/Menu/DisplayOne' 
+//import { Home } from './Component/Task4/Home';
 //import { TaskThree } from './Component/Task/Task3';
 //import { TaskTwo } from './Component/Task2/TaskTwo';
 //import { Task } from './Component/Task/Task';
@@ -59,11 +61,14 @@ export default function App() {
 
   return (
     <div>
-      <Home />
+      <DisplayOne/>
+      
 
 
     </div>
+    
     /*<>
+    <Home/>
   <TaskTwo/>
   <TaskTwo/>
     <Task/>
@@ -82,6 +87,4 @@ export default function App() {
     </>*/
   );
 }
-
-
 

@@ -1,6 +1,8 @@
 import { useState } from "react"
 import './StyleToTaskFour.css'
 
+
+
 export const Home = () => {
     const student = [
         { Id: 101, class: 'SYMSC', sname: 'tyu', Department: 'compuer science', math: 56, science: 77, history: 89, marathi: 95, english: 70, geography: 89 },
