@@ -5,7 +5,7 @@ export const DisplayThree=({name1,data2})=>{
         {name1 &&
             <table>
                 <tr>
-                    <th>ID</th>
+                    <th title="Id">ID</th>
                     <th>Class</th>
                     <th>Sname</th>
                     <th>Department</th>

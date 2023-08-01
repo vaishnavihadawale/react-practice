@@ -46,13 +46,13 @@ export const Home = () => {
       }
     return (
         <div>
-            <button onClick={display}>FYMSC Student</button>
+            <button  onClick={display}>FYMSC Student</button>
             <button onClick={displayone}>SYMSC Student</button>
             <button onClick={displaytwo}>TYMSC Student</button>
             { isLoggedIn && 
             <table>
                 <tr>
-                    <th>ID</th>
+                    <th title="Id">ID</th>
                     <th>Class</th>
                     <th>Sname</th>
                     <th>Department</th>

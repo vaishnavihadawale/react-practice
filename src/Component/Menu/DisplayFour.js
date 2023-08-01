@@ -5,7 +5,7 @@ export const DisplayFour=({name2,data3})=>{
         {name2 &&
             <table>
                 <tr>
-                    <th>ID</th>
+                    <th title="Id">ID</th>
                     <th>Class</th>
                     <th>Sname</th>
                     <th>Department</th>

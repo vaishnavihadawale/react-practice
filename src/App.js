@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './App.css';
+import {Form} from './Component/RegistrationForm/Form';
 
- import {DisplayOne} from './Component/Menu/DisplayOne' 
+ //import {DisplayOne} from './Component/Menu/DisplayOne' 
 //import { Home } from './Component/Task4/Home';
 //import { TaskThree } from './Component/Task/Task3';
 //import { TaskTwo } from './Component/Task2/TaskTwo';
@@ -13,7 +14,7 @@ import './App.css';
 //import logo from './reactlogo.jpg'
 //import { ListRendering } from './Component/rendering/ListRendering';
 //let isLoggedIn = false;
-function NewButton() {
+/*function NewButton() {
   return (
     <div>
 
@@ -27,47 +28,47 @@ const user = {
   imageSize: 90,
   borderRadius: 50,
 
-}
+}*/
 
 export default function App() {
 
 
-  const [username, setUserName] = useState('Guest')
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  function toggleButton() {
+  //const [username, setUserName] = useState('Guest')
+  //const [isLoggedIn, setIsLoggedIn] = useState(false)
+  //function toggleButton() {
 
-    if (isLoggedIn === true) {
-      setIsLoggedIn(false)
-      setUserName("Guest")
+    //if (isLoggedIn === true) {
+      //setIsLoggedIn(false)
+      //setUserName("Guest")
 
-    }
-    else {
-      setIsLoggedIn(true)
-      setUserName("Vaishnavi")
-    }
-  }
-  let headerText, buttonText1;
+    //}
+    //else {
+     // setIsLoggedIn(true)
+     // setUserName("Vaishnavi")
+    //}
+ // }
+  //let headerText, buttonText1;
 
-  if (isLoggedIn === true) {
-    headerText = "I want to login"
+  //if (isLoggedIn === true) {
+    //headerText = "I want to login"
 
-    buttonText1 = "Logout"
-  }
-  else {
-    headerText = "I want to logout"
+    //buttonText1 = "Logout"
+  //}
+  //else {
+   // headerText = "I want to logout"
 
-    buttonText1 = "Login"
-  }
+    //buttonText1 = "Login"
+  //}
 
   return (
-    <div>
-      <DisplayOne/>
-      
+   /* <DisplayOne/>*/
+   <>
+   <Form/>
 
-
-    </div>
     
+    </>
     /*<>
+    <DisplayOne/>
     <Home/>
   <TaskTwo/>
   <TaskTwo/>
