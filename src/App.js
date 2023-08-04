@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import './App.css';
-import {Form} from './Component/RegistrationForm/Form';
 
+import './App.css';
+import { FormValidation } from './Component/FormValidation/FormValidation';
+//import {Form} from './Component/RegistrationForm/Form';
  //import {DisplayOne} from './Component/Menu/DisplayOne' 
 //import { Home } from './Component/Task4/Home';
 //import { TaskThree } from './Component/Task/Task3';
@@ -61,13 +61,14 @@ export default function App() {
   //}
 
   return (
-   /* <DisplayOne/>*/
+   
    <>
-   <Form/>
+   <FormValidation/>
 
     
     </>
     /*<>
+    <Form/>
     <DisplayOne/>
     <Home/>
   <TaskTwo/>
