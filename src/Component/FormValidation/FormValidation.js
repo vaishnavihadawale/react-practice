@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './Design.css'
 
 export const FormValidation = () => {
+
     const [inputarray, setInputarray] = useState([]);
     const [inputData, setInputData] = useState({
         emailid: "",
@@ -10,8 +11,8 @@ export const FormValidation = () => {
 
 
     const changehandle = (event) => {
-
-        setInputData({ ...inputData, [event.target.name]: event.target.value })
+    
+            setInputData({ ...inputData, [event.target.name]: event.target.value })
 
     }
 
@@ -20,9 +21,18 @@ export const FormValidation = () => {
     const handlesubmit = (event) => {
         event.preventDefault();
         setInputarray([...inputarray, { emailid, password }])
-        console.log(inputData);
-        console.log(inputarray);
+       // console.log(inputData);
+        //console.log(inputarray);
         setInputData({ emailid: "", password: "" })
+    }
+
+
+    const handledelete = (index) => {
+        const dataRow = [...inputarray];
+        dataRow.splice(index, 1);
+        console.log(inputarray);
+        console.log(dataRow);
+        setInputarray(dataRow);
     }
 
     return (
@@ -44,19 +54,22 @@ export const FormValidation = () => {
                 </form>
                 <table border={2} cellPadding={20} width="60%" >
                     <tbody>
-                    <tr>
-                        <th>Email</th>
-                        <th>Password</th>
-                    </tr>
-                    { inputarray.map((data)=>{
-                        return(
-                    
                         <tr>
-                            <td>{data.emailid}</td>
-                            <td>{data.password}</td>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Delete</th>
                         </tr>
-                        )})
-                    }
+                        {inputarray.map((data, index) => {
+                            return (
+
+                                <tr>
+                                    <td>{data.emailid}</td>
+                                    <td>{data.password}</td>
+                                    <td><button onClick={() => handledelete(index)}>Delete</button></td>
+                                </tr>
+                            )
+                        })
+                        }
                     </tbody>
                 </table>
 
