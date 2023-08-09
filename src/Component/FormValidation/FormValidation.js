@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import './Design.css'
+import './Design.css';
+import { BsFillTrashFill } from "react-icons/bs"
+import { BsFillPencilFill } from 'react-icons/bs';
 
 export const FormValidation = () => {
-
+    const [currentIndex, setCurrentIndex] = useState();
+    const [flag, setFlag] = useState(true);
     const [inputarray, setInputarray] = useState([]);
     const [inputData, setInputData] = useState({
         emailid: "",
@@ -11,8 +14,9 @@ export const FormValidation = () => {
 
 
     const changehandle = (event) => {
-    
-            setInputData({ ...inputData, [event.target.name]: event.target.value })
+
+        setInputData({ ...inputData, [event.target.name]: event.target.value })
+        console.log(inputData)
 
     }
 
@@ -20,19 +24,31 @@ export const FormValidation = () => {
 
     const handlesubmit = (event) => {
         event.preventDefault();
-        setInputarray([...inputarray, { emailid, password }])
-       // console.log(inputData);
-        //console.log(inputarray);
+
+        if (flag === true) {
+            setInputarray([...inputarray, { emailid, password }])
+        }
+        else {
+            inputarray.splice(currentIndex, 1, { emailid, password })
+            setFlag(true)
+        }
+
         setInputData({ emailid: "", password: "" })
+
     }
 
 
     const handledelete = (index) => {
         const dataRow = [...inputarray];
         dataRow.splice(index, 1);
-        console.log(inputarray);
-        console.log(dataRow);
         setInputarray(dataRow);
+    }
+
+    let handleEdit = (data, index) => {
+        setFlag(false);
+        setInputData(data);
+        setCurrentIndex(index);
+
     }
 
     return (
@@ -49,7 +65,8 @@ export const FormValidation = () => {
                         <label>Password</label>
                         <input type="text" name='password' value={inputData.password} className="form-control" placeholder='Enter your password..' onChange={changehandle}></input>
                     </div>
-                    <button onClick={handlesubmit}>Submit</button>
+                    <button onClick={handlesubmit}>Submit
+                    </button>
 
                 </form>
                 <table border={2} cellPadding={20} width="60%" >
@@ -57,6 +74,7 @@ export const FormValidation = () => {
                         <tr>
                             <th>Email</th>
                             <th>Password</th>
+                            <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         {inputarray.map((data, index) => {
@@ -65,7 +83,8 @@ export const FormValidation = () => {
                                 <tr>
                                     <td>{data.emailid}</td>
                                     <td>{data.password}</td>
-                                    <td><button onClick={() => handledelete(index)}>Delete</button></td>
+                                    <td><BsFillPencilFill onClick={() => handleEdit(data, index)} /></td>
+                                    <td><BsFillTrashFill onClick={() => handledelete(index)} /></td>
                                 </tr>
                             )
                         })
